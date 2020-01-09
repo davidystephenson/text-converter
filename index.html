@@ -7,9 +7,21 @@
   <body>
     <h1>Text Converter</h1>
 
+    <h1 class='subtitle'>Convert your text here</h1>
+
     <script>
       console.log('hello')
       console.log(document)
+
+      // 1. find the element
+      const h1 = document.querySelector('h1')
+      console.log('h1 test:', h1)
+
+      const subtitle = document.querySelector('h1.subtitle')
+      console.log('subtitle test:', subtitle)
+
+      const h1s = document.querySelectorAll('h1')
+      console.log('h1s test:', h1s)
     </script>
   </body>
 </html>
