@@ -7,14 +7,14 @@
   <body>
     <h1>Text Converter</h1>
 
-    <h1 id='heading' class='subtitle'>Convert your text here</h1>
+    <h1 id='heading' class='subtitle'></h1>
 
     <form>
       <input type='text' />
 
+      <button>Convert</button>
     </form>
 
-    <button>Convert</button>
 
     <script>
       console.log('hello')
@@ -28,21 +28,28 @@
       const button = document.querySelector('button')
       console.log('button test:', button)
 
-      button.addEventListener(
-        'click',
-        (xyz) => {
-          console.log('xyz test:', xyz)
+      const form = document.querySelector('form')
+
+      form.addEventListener(
+        'submit', // event type
+        (event) => { // handler callback
+          event.preventDefault()
+
           console.log('I was clicked')
+
+
+          // 1. find element
+          const input = document.querySelector('input')
         
           // 2. extract content
-          const text = subtitle.innerText
+          const text = input.value
           console.log('text test:', text)
 
           // 3. modify the content
           const lower = text.toLowerCase()
 
           // 4. modify the element
-          subtitle.textContent = lower 
+          subtitle.textContent = lower
         }
       )    
 
