@@ -22,6 +22,18 @@
 
       const h1s = document.querySelectorAll('h1')
       console.log('h1s test:', h1s)
+
+      // 2. extract content
+      const text = subtitle.innerText
+      console.log('text test:', text)
+
+
+      // 3. modify the content
+      const lower = text.toLowerCase()
+      console.log('lower test:', lower)
+
+      // 4. modify the element
+      subtitle.textContent = lower
     </script>
   </body>
 </html>
