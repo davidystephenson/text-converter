@@ -7,33 +7,45 @@
   <body>
     <h1>Text Converter</h1>
 
-    <h1 class='subtitle'>Convert your text here</h1>
+    <h1 id='heading' class='subtitle'>Convert your text here</h1>
+
+    <form>
+      <input type='text' />
+
+    </form>
+
+    <button>Convert</button>
 
     <script>
       console.log('hello')
       console.log(document)
 
       // 1. find the element
-      const h1 = document.querySelector('h1')
-      console.log('h1 test:', h1)
+      const h1 = document.querySelector('#heading')
 
       const subtitle = document.querySelector('h1.subtitle')
-      console.log('subtitle test:', subtitle)
 
-      const h1s = document.querySelectorAll('h1')
-      console.log('h1s test:', h1s)
+      const button = document.querySelector('button')
+      console.log('button test:', button)
 
-      // 2. extract content
-      const text = subtitle.innerText
-      console.log('text test:', text)
+      button.addEventListener(
+        'click',
+        (xyz) => {
+          console.log('xyz test:', xyz)
+          console.log('I was clicked')
+        
+          // 2. extract content
+          const text = subtitle.innerText
+          console.log('text test:', text)
 
+          // 3. modify the content
+          const lower = text.toLowerCase()
 
-      // 3. modify the content
-      const lower = text.toLowerCase()
-      console.log('lower test:', lower)
+          // 4. modify the element
+          subtitle.textContent = lower 
+        }
+      )    
 
-      // 4. modify the element
-      subtitle.textContent = lower
     </script>
   </body>
 </html>
